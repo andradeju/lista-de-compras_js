@@ -1,0 +1,31 @@
+ 
+// Por padrão quando um formulário HTML é enviado ou quando um botão do tipo submit dentro de um formulário é clicado, o navegador automaticamente recarrega a página. Isso acontece para que os dados sejam enviados (ou "postados") para o servidor. A função preventDefault() evita esse comportamento padrão do navegador. Ao chamá-la, você está dizendo ao navegador que ele não deve realizar a ação padrão associada ao evento, como recarregar a página ao submeter o formulário. usa-se preventDefault() para impedir o comportamento padrão de recarregamento da página ao submeter o formulário ou clicar em um botão de submit.
+ 
+ 
+ Eventos
+ Mas o que são eventos? Simplificando, eventos são ações ou ocorrências que acontecem no sistema que você está programando, como um clique do mouse, pressionamentos de teclas, movimentos do mouse, etc. Geralmente como resultao de uma interação do usuário ou do próprio comportamento da página. E para cada um desses eventos, o JavaScript nos permite interagir com eles através de algo chamado "objeto event".
+
+ Para capturar eventos, você utiliza Event Listeners (ou ouvintes de eventos). Eles permitem que você "escute" quando um evento acontece em um elemento e execute uma função em resposta a isso.
+
+Sintaxe básica com addEventListener:
+elemento.addEventListener('tipoDoEvento', funçãoCallback);
+
+O objeto event contém várias propriedades que nos dão informações sobre o evento que ocorreu. Aqui estão algumas das mais comuns:
+
+type: diz qual foi o tipo do evento (click, mouseover, keyup, etc.).
+target: refere-se ao elemento que disparou o evento.
+currentTarget: semelhante ao target, mas se refere ao elemento ao qual o evento foi realmente atribuído.
+clientX / clientY: fornece a posição horizontal e vertical do mouse quando um evento do mouse foi disparado.
+keyCode: no caso de um evento de teclado, diz qual tecla foi pressionada.
+
+<button id="meuBotao">Clique aqui!</button>
+
+<script>
+  document.getElementById('meuBotao').addEventListener('click', function(event) {
+    alert("Botão clicado!");
+    console.log(event.type); // Mostra o tipo do evento no console, que será "click"
+    console.log(event.target); // Mostra o elemento que disparou o evento, que será o botão
+  });
+</script>
+
+O método appendChild em JS é usado para add um novo nó(elemento) como "filho" de um elemento pai existente no DOM. Ele faz parte da API do DOM e é uma maneira comum de inserir elementos em uma página web. 
